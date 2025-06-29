@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SP1DEYYXPR1ME | File Upload</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: url('https://files.catbox.moe/kyzv35.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 1px 1px 4px black;
+    }
+
+    form {
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(3px);
+    }
+
+    input[type="file"],
+    input[type="text"],
+    input[type="submit"] {
+      margin: 10px 0;
+      padding: 12px;
+      width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    input[type="submit"] {
+      background: #e60000;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background: #c40000;
+    }
+
+    .link-box {
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 1em;
+      color: #fff;
+      word-break: break-word;
+    }
+
+    .link-box a {
+      text-decoration: none;
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🕸️ SP1DEYYXPR1ME File Server</h1>
+
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required /><br />
+    <input
+      type="text"
+      name="expiry"
+      placeholder="Expiry Time (HH:MM:SS)"
+      required
+    /><br />
+    <input type="submit" value="📤 Upload" />
+  </form>
+
+  {% if link %}
+  <div class="link-box">
+    <strong>✅ Your download link:</strong><br />
+    <a href="{{ link }}" target="_blank">{{ link }}</a>
+  </div>
+  {% endif %}
+</body>
+</html>
